@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Stackery | Serverless Development for Teams</title>
+  <meta name="description" content="Build production-ready applications with Stackery's complete serverless toolkit.">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <style>
+    body {
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      color: #212529 !important;
+      font-family: "Open Sans", sans-serif !important;
+      font-size: 1rem !important;
+      font-weight: normal !important;
+      line-height: 1.5 !important;
+    }
+
+    h1 {
+      margin-top: 70px !important;
+      text-align: center;
+      font-size: 3.8rem !important;
+      margin-bottom: 7vh !important;
+    }
+
+    h2 {
+      margin-top: 50px !important;
+      font-size: 2.4rem !important;
+    }
+
+    h4 {
+      margin-top: 20px !important;
+    }
+
+    a {
+      color: #79CCB5 !important;
+      text-decoration: none !important;
+    }
+
+    a:focus,
+    a:hover {
+      color: #72bfa9 !important;
+      text-decoration: none !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+      margin-bottom: 0.5rem;
+      font-family: inherit;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #3a3a3a;
+    }
+
+    .cont {
+      min-width: 100%;
+      max-height: 35vh;
+      text-align: center;
+    }
+
+    .cont-within-cont {
+      width: 50%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .logo-cont {
+      position: relative;
+      height: 100%;
+      width: 280px;
+      padding: 0 0 50% 0;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #logo-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-animation: falling-down 5s;
+      animation: falling-down 5s;
+    }
+
+    #logo-bottom {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-animation: falling-down 2.3s;
+      animation: falling-down 2.3s;
+    }
+
+    @media (max-width:1299px) {
+      #logo-top,
+      #logo-bottom {
+        width: 90vw !important;
+      }
+      .cont {
+        max-height: 30vh;
+      }
+    }
+
+    @-moz-document {
+      #logo-top,
+      #logo-bottom {
+        left: 25 !important;
+      }
+    }
+
+    @media (max-width:991px) {
+      .mobile-hidden {
+        display: none !important;
+      }
+    }
+
+    @-webkit-keyframes falling-down {
+      0% {
+        opacity: 0;
+        -webkit-transform: translateY(-500px);
+        transform: translateY(-500px);
+      }
+      75% {
+        opacity: 1;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes falling-down {
+      0% {
+        opacity: 0;
+        -webkit-transform: translateY(-500px);
+        transform: translateY(-500px);
+      }
+      75% {
+        opacity: 1;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+    }
+
+    .headline i {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #79CCB5 !important;
+      margin-top: 10px !important;
+    }
+
+    .card,
+    .card:hover,
+    .card:focus,
+    .card:active {
+      background-color: transparent;
+    }
+
+    .card {
+      color: #212529 !important;
+      border-radius: 4px;
+      box-sizing: border-box;
+      display: flex;
+      flex: 1 0 340px;
+      flex-direction: column;
+      justify-content: center;
+      margin: 50px 0 30px;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .card-article {
+      transition: all .3s;
+      padding-bottom: 0 !important;
+      border: none !important;
+      min-height: 30vh;
+      -webkit-box-shadow: 5.665px 9.429px 40px 0px rgba(0, 0, 0, 0.17);
+      box-shadow: 5.665px 9.429px 40px 0px rgba(0, 0, 0, 0.17);
+    }
+
+    .card-article:hover {
+      -webkit-transform: translateY(-5px) !important;
+      transform: translateY(-5px) !important;
+      -webkit-box-shadow: 5.665px 9.429px 40px 0px rgba(0, 0, 0, 0.27);
+      box-shadow: 5.665px 9.429px 40px 0px rgba(0, 0, 0, 0.27);
+    }
+
+    .card-article-body {
+      z-index: 200;
+      padding: 35px;
+    }
+
+    .card-article .card-article-linker {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      text-decoration: none;
+      /* No underlines on the link */
+      z-index: 100;
+      /* Places the link above everything else in the div */
+      background-color: transparent;
+      /* Fix to make div clickable in IE */
+      opacity: 0;
+      /* Fix to make div clickable in IE */
+      filter: alpha(opacity=1);
+      /* Fix to make div clickable in IE */
+    }
+  </style>
+
+  <h1>Hello, Stackery!</h1>
+  <div class="cont mobile-hidden">
+    <div class="cont-within-cont">
+      <div class="logo-cont">
+        <svg id="logo-top" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+          <style type="text/css">
+            .st0 {
+              fill: #80CBB4;
+            }
+          </style>
+          <g class="layer">
+            <path class="st0" d="m270.622911,44.617975l-128.014786,-42.037545c-0.190215,0 -0.38043,0 -0.760861,-0.190215c-0.38043,0 -0.760861,-0.190215 -0.951076,-0.190215c-0.38043,0 -0.760861,0 -1.141291,0c-0.38043,0 -0.760861,0 -1.141291,0c-0.38043,0 -0.760861,0.190215 -0.951076,0.190215c-0.190215,0 -0.570645,0 -0.760861,0.190215l-128.014786,42.037545c-3.614088,1.141291 -6.086884,4.565163 -6.086884,8.559681l0,28.722485c0,0.190215 0,0.38043 0,0.760861c0,0.190215 0,0.38043 0,0.570645c0.190215,0.951076 0.38043,1.711936 0.760861,2.472797c0,0.190215 0.190215,0.190215 0.190215,0.38043c0.38043,0.760861 0.951076,1.521721 1.521721,2.092366c0,0 0,0.190215 0.190215,0.190215c0.570645,0.570645 1.331506,1.141291 2.282582,1.521721c0,0 0.190215,0.190215 0.190215,0.190215l110.705209,54.591744c1.331506,0.570645 2.663012,0.951076 3.994518,0.951076c1.711936,0 3.233657,-0.38043 4.755378,-1.331506c2.663012,-1.711936 4.184733,-4.565163 4.184733,-7.608605l0,-45.651633l6.277099,0l126.112635,62.200349c1.331506,0.570645 2.663012,0.951076 3.994518,0.951076c1.711936,0 3.233657,-0.38043 4.755378,-1.331506c2.663012,-1.711936 4.184733,-4.565163 4.184733,-7.608605l0,-92.064126c0,-3.994518 -2.472797,-7.41839 -6.277099,-8.559681zm-249.752473,14.836781l110.134564,-36.140876l0,49.64615l-8.369466,0l-101.765098,0l0,-13.505275zm92.634771,62.58078l-63.34164,-31.195282l63.34164,0l0,31.195282zm145.514579,8.559681l-110.134564,-54.401529l0,-52.879808l110.134564,36.140876l0,71.140461z" fill="black" id="svg_3"/>
+          </g>
+        </svg>
+        <svg id="logo-bottom" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+          <style type="text/css">
+            .st0 {
+              fill: #80CBB4;
+            }
+          </style>
+          <g class="layer">
+            <path class="st0" d="m276.709795,205.349765c-0.190215,-0.951076 -0.38043,-1.711936 -0.760861,-2.472797c0,-0.190215 -0.190215,-0.190215 -0.190215,-0.38043c-0.38043,-0.760861 -0.951076,-1.521721 -1.521721,-2.092366c0,0 0,-0.190215 -0.190215,-0.190215c-0.570645,-0.570645 -1.331506,-1.141291 -2.282582,-1.521721c0,0 -0.190215,-0.190215 -0.190215,-0.190215l-110.705209,-54.591744c-2.853227,-1.331506 -6.086884,-1.141291 -8.749896,0.38043c-2.663012,1.711936 -4.184733,4.565163 -4.184733,7.608605l0,45.651633l-5.896669,0l-126.112635,-62.200349c-2.853227,-1.331506 -6.086884,-1.141291 -8.749896,0.38043c-2.663012,1.711936 -4.184733,4.565163 -4.184733,7.608605l0,92.064126c0,3.804303 2.472797,7.228175 6.086884,8.559681l128.014786,42.037545c0,0 0,0 0,0c0.951076,0.38043 1.902151,0.38043 2.853227,0.38043c0.951076,0 1.902151,-0.190215 2.853227,-0.38043c0,0 0,0 0,0l128.014786,-42.037545c3.614088,-1.141291 6.086884,-4.565163 6.086884,-8.559681l0,-28.722485c0,-0.190215 0,-0.38043 0,-0.760861c-0.190215,-0.190215 -0.190215,-0.38043 -0.190215,-0.570645zm-110.514994,-38.994103l63.34164,31.195282l-63.34164,0l0,-31.195282zm-145.324364,-8.559681l110.134564,54.401529l0,52.879808l-110.134564,-36.140876l0,-71.140461zm238.14935,71.140461l-110.134564,36.140876l0,-49.64615l8.369466,0l101.765098,0l0,13.505275z" fill="black" id="svg_2"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="help-text container">
+    <h2>Congratulations!</h2>
+    <p>
+      Your Stackery stack is up and running! You can now edit your stack from the <a href="https://app.stackery.io">Stackery Dashboard</a> or the <a href="https://docs.stackery.io/cli/">CLI</a>.
+    </p>
+    <div class="row">
+      <div class="col-md-4 col-sm-12">
+        <div class="card card-article box-shadow">
+          <div class="card-article-body">
+            <a href='https://docs.stackery.io/' class="card-article-linker"></a>
+            <span class="headline">
+              <i class="fas fa-book-open"></i>
+            </span>
+            <br />
+            <a href='https://docs.stackery.io/'>
+              <h4 class="card-title">Read the Docs</h4>
+            </a>
+            <p class="card-description">Our complete reference docs for the nitty-gritty details of using Stackery.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <div class="card card-article box-shadow">
+          <div class="card-article-body">
+            <a href='https://support.stackery.io/hc/en-us/sections/360000705392-Tutorials' class="card-article-linker"></a>
+            <span class="headline">
+              <i class="fas fa-cog"></i>
+            </span>
+            <br />
+            <a href='https://support.stackery.io/hc/en-us/sections/360000705392-Tutorials'>
+              <h4 class="card-title">Stackery Tutorials</h4>
+            </a>
+            <p class="card-description">Find out what you can do with Stackery with out step-by-step turorials.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <div class="card card-article box-shadow">
+          <div class="card-article-body">
+            <a href='https://support.stackery.io/hc/en-us' class="card-article-linker"></a>
+            <span class="headline">
+              <i class="fas fa-terminal"></i>
+            </span>
+            <br />
+            <a href='https://support.stackery.io/hc/en-us'>
+              <h4 class="card-title">Get Help</h4>
+            </a>
+            <p class="card-description">Visit our Support site for high-level documentation and support for Stackery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
