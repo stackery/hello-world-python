@@ -2,12 +2,12 @@ AWSTemplateFormatVersion: 2010-09-09
 Transform: AWS::Serverless-2016-10-31
 Description: Stackery Serverless API Example Stack
 Resources:
-  apiFE76C470:
+  api:
     Type: AWS::Serverless::Api
     Properties:
       Name: !Sub
         - ${ResourceName} From Stackery Stack ${StackeryStackTagName} Environment ${StackeryEnvironmentTagName}
-        - ResourceName: apiFE76C470
+        - ResourceName: api
       StageName: !Ref StackeryEnvironmentAPIGatewayStageName
       DefinitionBody:
         swagger: '2.0'
@@ -18,13 +18,13 @@ Resources:
               x-amazon-apigateway-integration:
                 httpMethod: POST
                 type: aws_proxy
-                uri: !Sub arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${functionBE379698.Arn}/invocations
+                uri: !Sub arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${getWelcomePage.Arn}/invocations
               responses: {}
       EndpointConfiguration: REGIONAL
-  functionBE379698:
+  getWelcomePage:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub ${AWS::StackName}-functionBE379698
+      FunctionName: !Sub ${AWS::StackName}-getWelcomePage
       Description: !Sub
         - Stackery Stack ${StackeryStackTagName} Environment ${StackeryEnvironmentTagName} Function ${ResourceName}
         - ResourceName: getWelcomePage
@@ -42,26 +42,9 @@ Resources:
           Properties:
             Path: /
             Method: GET
-            RestApiId: !Ref apiFE76C470
+            RestApiId: !Ref api
     Metadata:
       StackeryName: getWelcomePage
-  function3A8D530C:
-    Type: AWS::Serverless::Function
-    Properties:
-      FunctionName: !Sub ${AWS::StackName}-function3A8D530C
-      Description: !Sub
-        - Stackery Stack ${StackeryStackTagName} Environment ${StackeryEnvironmentTagName} Function ${ResourceName}
-        - ResourceName: logErrors
-      CodeUri: src/logErrors
-      Handler: handler.handler
-      Runtime: python3.6
-      MemorySize: 3008
-      Timeout: 30
-      Tracing: Active
-      Policies:
-        - AWSXrayWriteOnlyAccess
-    Metadata:
-      StackeryName: logErrors
 Parameters:
   StackeryStackTagName:
     Type: String
