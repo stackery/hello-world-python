@@ -37,7 +37,7 @@ Resources:
       Policies:
         - AWSXrayWriteOnlyAccess
       Events:
-        apiFE76C470:
+        apiGET:
           Type: Api
           Properties:
             Path: /
@@ -55,6 +55,3 @@ Parameters:
   StackeryEnvironmentAPIGatewayStageName:
     Type: String
     Description: Environment name used for API Gateway Stage names (injected by Stackery at deployment time)
-Metadata:
-  StackeryErrorsTargets:
-    function3A8D530C: {}
