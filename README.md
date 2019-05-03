@@ -13,13 +13,15 @@ Here is an overview of the files:
 
 ```bash
 .
-├── README.md                   <-- This README file
-├── src                         <-- Source code dir for all AWS Lambda functions
-│   └── getWelcomePage          <-- Source code dir for getWelcomePage function
-│       ├── README.md           <-- Function specific README
-│       ├── handler.py          <-- Lambda function code
-│       ├── requirements.txt    <-- Python pip dependencies
-│       └── welcome.html        <-- HTML welcome page returned by Lambda function
-└── template.yaml               <-- SAM infrastructure-as-code template
+├── README.md                       <-- This README file
+├── src                             <-- Source code dir for all AWS Lambda functions
+│   └── getWelcomePage              <-- Source code dir for getWelcomePage function
+│       ├── README.md               <-- Function specific README
+│       ├── handler.py              <-- Lambda function code
+│       ├── requirements.txt        <-- Python pip dependencies
+│       ├── .stackery-config.yaml   <-- Default CLI parameters for this directory
+│       └── welcome.html            <-- HTML welcome page returned by Lambda function
+├── .stackery-config.yaml           <-- Default CLI parameters for root directory
+└── template.yaml                   <-- SAM infrastructure-as-code template
 ```
 
