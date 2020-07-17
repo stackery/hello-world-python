@@ -1,4 +1,4 @@
-# Stackery Hello World - Python 3.7
+# Stackery Hello World - Python 3.8
 
 This is a sample template for a serverless AWS Lambda application, written in Python.
 
